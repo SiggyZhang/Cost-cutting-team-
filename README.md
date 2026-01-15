@@ -15,15 +15,14 @@ The open-agent network  agent team to tackle the  factory challenges
 2. 技术架构
   - 使用的 OpenAgents 版本与相关技术栈:
 核心技术栈
-组件	                       说明
-OpenAgents	               开源 AI Agent 网络框架，支持多智能体发现、通信、协作
-Openai-GPT-5-Mini	         Openagent 提供的海外大模型  
-                           Openai-Base-URL: https://model-gateway.openagents.org/v1/   
-                           api key 由主办方免费提供， 目前为止token已用完。 
-Agent 角色提示工程.  	       为每一个专家定制身份、行为、语言风格、专业立场
-                          （如战略顾问以指定战略模型为开头：如波特五力模型、
-                           生产部leader 会用生产流程等角度论证观点结论）
-本地部署 + 自定义模型集成	  通过 OpenAI 兼容接口接入 GPT-5-Mini，实现私有化部署
+
+OpenAgents:开源 AI Agent 网络框架，支持多智能体发现、通信、协作
+
+Openai-GPT-5-Mini: Openagent 提供的海外大模型 ; Openai-Base-URL: https://model-gateway.openagents.org/v1/ ; api key 由主办方免费提供， 目前为止token已用完。 
+
+Agent 角色提示工程:为每一个专家定制身份、行为、语言风格、专业立场;(如战略顾问以指定战略模型为开头：如波特五力模型、生产部leader 会用生产流程等角度论证观点结论）
+
+本地部署 + 自定义模型集成:通过 OpenAI 兼容接口接入 GPT-5-Mini，实现私有化部署
 
   - Agent Network 设计思路:
 Agent network 名称为Cost-cutting-team, 目前由5个智能体组成。用户提出一个问题， 由5个agent 轮流作答得出答案， 之后他们自行讨论， 各组回复对方的观点， 进行探讨， 辩论，最终得出一个基于所有专家达成共识的行动方案， 最后让信息搜集专员来执行落地。 
