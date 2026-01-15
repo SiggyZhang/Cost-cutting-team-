@@ -1,0 +1,417 @@
+2026-01-14 20:57:47,720 - root - INFO - Logging to file: /Users/siggysmackbookair/Cost-cutting-team/agents/openagents.log
+2026-01-14 20:57:47,723 - openagents.utils.agent_loader - INFO - Processed 1 enabled mods: ['openagents.mods.workspace.messaging']
+2026-01-14 20:57:47,723 - openagents.utils.agent_loader - INFO - Creating openagents.agents.collaborator_agent.CollaboratorAgent instance with ID 'charlie'
+2026-01-14 20:57:47,724 - openagents.utils.mod_loaders - INFO - Successfully loaded mod adapter: openagents.mods.workspace.messaging
+2026-01-14 20:57:47,724 - openagents.utils.mod_loaders - INFO - Instantiated adapter for openagents.mods.workspace.messaging (no args)
+2026-01-14 20:57:47,726 - openagents.mods.workspace.messaging.adapter - INFO - Initializing Thread Messaging protocol for agent charlie with file storage at /var/folders/t3/mjqht8dn1d983zxjslkrf03w0000gn/T/openagents_agent_charlie_threads_zemaahsx
+2026-01-14 20:57:47,726 - openagents.core.client - INFO - Registered mod adapter ThreadMessagingAgentAdapter with agent charlie
+2026-01-14 20:57:47,727 - openagents.agents.runner - INFO - Updated available tools for agent charlie: ['send_direct_message', 'send_channel_message', 'reply_channel_message', 'list_channels', 'retrieve_channel_messages', 'retrieve_direct_messages', 'react_to_message']
+2026-01-14 20:57:47,727 - openagents.utils.agent_loader - INFO - Successfully loaded openagents.agents.collaborator_agent.CollaboratorAgent 'charlie' from charlie.yaml
+2026-01-14 20:57:47,738 - openagents.core.client - INFO - ✅ Successfully retrieved health check from http://localhost:8700/api/health
+2026-01-14 20:57:47,739 - openagents.core.client - INFO - Detected network: DefaultNetwork (default-network-1)
+2026-01-14 20:57:47,740 - openagents.core.client - INFO - Transport: grpc, Host: localhost, Port: 8600
+2026-01-14 20:57:47,740 - openagents.core.client - INFO - Creating gRPC connector for agent charlie
+2026-01-14 20:57:47,800 - openagents.core.connectors.grpc_connector - INFO - Connecting to gRPC server at localhost:8600
+2026-01-14 20:57:47,841 - openagents.core.connectors.grpc_connector - INFO - Connected to gRPC network successfully
+2026-01-14 20:57:47,842 - openagents.core.client - INFO - 🔧 Starting message polling for  agent charlie
+2026-01-14 20:57:47,851 - openagents.core.client - INFO - 🔧 CLIENT: Starting message polling for agent charlie
+2026-01-14 20:57:47,856 - openagents.agents.runner - INFO - Supported mod: openagents.mods.workspace.forum (v1.0.0)
+2026-01-14 20:57:47,857 - openagents.agents.runner - INFO - Supported mod: openagents.mods.workspace.default (v1.0.0)
+2026-01-14 20:57:47,857 - openagents.agents.runner - INFO - Supported mod: openagents.mods.workspace.messaging (v1.0.0)
+2026-01-14 20:57:47,857 - openagents.agents.runner - INFO - Supported mod: openagents.mods.games.agentworld (v1.0.0)
+2026-01-14 20:57:47,858 - openagents.agents.runner - INFO - Supported mod: openagents.mods.workspace.wiki (v1.0.0)
+2026-01-14 20:57:47,858 - openagents.agents.runner - INFO - Supported mod: openagents.mods.workspace.project (v1.0.0)
+2026-01-14 20:57:47,860 - openagents.utils.mod_loaders - INFO - Successfully loaded mod adapter: openagents.mods.games.agentworld
+2026-01-14 20:57:47,861 - openagents.mods.games.agentworld.adapter - INFO - AgentWorld adapter created
+2026-01-14 20:57:47,861 - openagents.utils.mod_loaders - INFO - Instantiated adapter for openagents.mods.games.agentworld (no args)
+2026-01-14 20:57:47,862 - openagents.mods.games.agentworld.adapter - INFO - AgentWorld adapter initialized for agent charlie, game server: localhost:7031, username_prefix: None
+2026-01-14 20:57:47,862 - openagents.core.client - INFO - Registered mod adapter AgentWorldAdapter with agent charlie
+2026-01-14 20:57:47,863 - openagents.agents.runner - INFO - Updated available tools for agent charlie: ['send_direct_message', 'send_channel_message', 'reply_channel_message', 'list_channels', 'retrieve_channel_messages', 'retrieve_direct_messages', 'react_to_message', 'agentworld_login', 'agentworld_observe', 'agentworld_move', 'agentworld_chat', 'agentworld_attack', 'agentworld_harvest', 'agentworld_craft', 'agentworld_transfer_items']
+2026-01-14 20:58:40,087 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.direct_message.notification | Source: BrightMind8505 | Target: agent:charlie
+2026-01-14 20:58:59,967 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-14 20:59:00,887 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-01-14 20:59:00,889 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 400 - {'detail': 'Backend API error: Error at "/messages/3/tool_call_id": property "tool_call_id" is missing\nSchema:\n  {\n    "properties": {\n      "content": {\n        "description": "The contents of the tool message.",\n        "title": "Text content",\n        "type": "string"\n      },\n      "role": {\n        "description": "The role of the messages author, in this case `tool`.",\n        "enum": [\n          "tool"\n        ],\n        "type": "string",\n        "x-stainless-const": true\n      },\n      "tool_call_id": {\n        "description": "Tool call that this message is responding to.",\n        "type": "string"\n      }\n    },\n    "required": [\n      "role",\n      "content",\n      "tool_call_id"\n    ],\n    "title": "Tool message",\n    "type": "object"\n  }\n\nValue:\n  {\n    "content": "None",\n    "role": "tool"\n  }\n\n'}
+2026-01-14 21:01:43,380 - root - INFO - Logging to file: /Users/siggysmackbookair/Cost-cutting-team/agents/openagents.log
+2026-01-14 21:06:17,484 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: BrightMind8505 | Target: charlie
+2026-01-14 21:06:28,191 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-14 21:06:28,820 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-01-14 21:06:28,827 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 400 - {'detail': 'Backend API error: Error at "/messages/3/tool_call_id": property "tool_call_id" is missing\nSchema:\n  {\n    "properties": {\n      "content": {\n        "description": "The contents of the tool message.",\n        "title": "Text content",\n        "type": "string"\n      },\n      "role": {\n        "description": "The role of the messages author, in this case `tool`.",\n        "enum": [\n          "tool"\n        ],\n        "type": "string",\n        "x-stainless-const": true\n      },\n      "tool_call_id": {\n        "description": "Tool call that this message is responding to.",\n        "type": "string"\n      }\n    },\n    "required": [\n      "role",\n      "content",\n      "tool_call_id"\n    ],\n    "title": "Tool message",\n    "type": "object"\n  }\n\nValue:\n  {\n    "content": "None",\n    "role": "tool"\n  }\n\n'}
+2026-01-14 21:06:47,653 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: BrightMind8505 | Target: charlie
+2026-01-14 21:07:05,027 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-14 21:07:05,516 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-01-14 21:07:05,520 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 400 - {'detail': 'Backend API error: Error at "/messages/3/tool_call_id": property "tool_call_id" is missing\nSchema:\n  {\n    "properties": {\n      "content": {\n        "description": "The contents of the tool message.",\n        "title": "Text content",\n        "type": "string"\n      },\n      "role": {\n        "description": "The role of the messages author, in this case `tool`.",\n        "enum": [\n          "tool"\n        ],\n        "type": "string",\n        "x-stainless-const": true\n      },\n      "tool_call_id": {\n        "description": "Tool call that this message is responding to.",\n        "type": "string"\n      }\n    },\n    "required": [\n      "role",\n      "content",\n      "tool_call_id"\n    ],\n    "title": "Tool message",\n    "type": "object"\n  }\n\nValue:\n  {\n    "content": "None",\n    "role": "tool"\n  }\n\n'}
+2026-01-14 21:07:14,787 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: BrightMind8505 | Target: charlie
+2026-01-14 21:07:34,082 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-14 21:07:34,821 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-01-14 21:07:34,825 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 400 - {'detail': 'Backend API error: Error at "/messages/3/tool_call_id": property "tool_call_id" is missing\nSchema:\n  {\n    "properties": {\n      "content": {\n        "description": "The contents of the tool message.",\n        "title": "Text content",\n        "type": "string"\n      },\n      "role": {\n        "description": "The role of the messages author, in this case `tool`.",\n        "enum": [\n          "tool"\n        ],\n        "type": "string",\n        "x-stainless-const": true\n      },\n      "tool_call_id": {\n        "description": "Tool call that this message is responding to.",\n        "type": "string"\n      }\n    },\n    "required": [\n      "role",\n      "content",\n      "tool_call_id"\n    ],\n    "title": "Tool message",\n    "type": "object"\n  }\n\nValue:\n  {\n    "content": "None",\n    "role": "tool"\n  }\n\n'}
+2026-01-14 21:07:45,949 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: BrightMind8505 | Target: charlie
+2026-01-14 21:08:13,002 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-14 21:08:13,631 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-01-14 21:08:13,634 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 400 - {'detail': 'Backend API error: Error at "/messages/3/tool_call_id": property "tool_call_id" is missing\nSchema:\n  {\n    "properties": {\n      "content": {\n        "description": "The contents of the tool message.",\n        "title": "Text content",\n        "type": "string"\n      },\n      "role": {\n        "description": "The role of the messages author, in this case `tool`.",\n        "enum": [\n          "tool"\n        ],\n        "type": "string",\n        "x-stainless-const": true\n      },\n      "tool_call_id": {\n        "description": "Tool call that this message is responding to.",\n        "type": "string"\n      }\n    },\n    "required": [\n      "role",\n      "content",\n      "tool_call_id"\n    ],\n    "title": "Tool message",\n    "type": "object"\n  }\n\nValue:\n  {\n    "content": "None",\n    "role": "tool"\n  }\n\n'}
+2026-01-14 21:10:19,626 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: BrightMind8505 | Target: charlie
+2026-01-14 21:10:30,936 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-14 21:10:31,435 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-01-14 21:10:31,436 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 400 - {'detail': 'Backend API error: Error at "/messages/3/tool_call_id": property "tool_call_id" is missing\nSchema:\n  {\n    "properties": {\n      "content": {\n        "description": "The contents of the tool message.",\n        "title": "Text content",\n        "type": "string"\n      },\n      "role": {\n        "description": "The role of the messages author, in this case `tool`.",\n        "enum": [\n          "tool"\n        ],\n        "type": "string",\n        "x-stainless-const": true\n      },\n      "tool_call_id": {\n        "description": "Tool call that this message is responding to.",\n        "type": "string"\n      }\n    },\n    "required": [\n      "role",\n      "content",\n      "tool_call_id"\n    ],\n    "title": "Tool message",\n    "type": "object"\n  }\n\nValue:\n  {\n    "content": "None",\n    "role": "tool"\n  }\n\n'}
+2026-01-14 21:10:45,720 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: BrightMind8505 | Target: charlie
+2026-01-14 21:10:58,800 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-14 21:10:59,414 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-01-14 21:10:59,415 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 400 - {'detail': 'Backend API error: Error at "/messages/3/tool_call_id": property "tool_call_id" is missing\nSchema:\n  {\n    "properties": {\n      "content": {\n        "description": "The contents of the tool message.",\n        "title": "Text content",\n        "type": "string"\n      },\n      "role": {\n        "description": "The role of the messages author, in this case `tool`.",\n        "enum": [\n          "tool"\n        ],\n        "type": "string",\n        "x-stainless-const": true\n      },\n      "tool_call_id": {\n        "description": "Tool call that this message is responding to.",\n        "type": "string"\n      }\n    },\n    "required": [\n      "role",\n      "content",\n      "tool_call_id"\n    ],\n    "title": "Tool message",\n    "type": "object"\n  }\n\nValue:\n  {\n    "content": "None",\n    "role": "tool"\n  }\n\n'}
+2026-01-14 21:16:36,178 - openagents.core.connectors.grpc_connector - ERROR - gRPC error UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:8600: Failed to connect to remote host: connect: Connection refused (61)
+2026-01-14 21:16:36,183 - openagents.core.connectors.grpc_connector - WARNING - Poll messages request failed: gRPC error UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:8600: Failed to connect to remote host: connect: Connection refused (61)
+2026-01-14 21:16:37,188 - openagents.core.connectors.grpc_connector - ERROR - gRPC error UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:8600: Failed to connect to remote host: connect: Connection refused (61)
+2026-01-14 21:16:37,191 - openagents.core.connectors.grpc_connector - WARNING - Poll messages request failed: gRPC error UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:8600: Failed to connect to remote host: connect: Connection refused (61)
+2026-01-14 21:16:38,195 - openagents.core.connectors.grpc_connector - ERROR - gRPC error UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:8600: Failed to connect to remote host: connect: Connection refused (61)
+2026-01-14 21:16:38,198 - openagents.core.connectors.grpc_connector - WARNING - Poll messages request failed: gRPC error UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:8600: Failed to connect to remote host: connect: Connection refused (61)
+2026-01-14 21:16:39,203 - openagents.core.connectors.grpc_connector - ERROR - gRPC error UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:8600: Failed to connect to remote host: connect: Connection refused (61)
+2026-01-14 21:16:39,207 - openagents.core.connectors.grpc_connector - WARNING - Poll messages request failed: gRPC error UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:8600: Failed to connect to remote host: connect: Connection refused (61)
+2026-01-14 21:16:40,212 - openagents.core.connectors.grpc_connector - ERROR - gRPC error UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:8600: Failed to connect to remote host: connect: Connection refused (61)
+2026-01-14 21:16:40,217 - openagents.core.connectors.grpc_connector - WARNING - Poll messages request failed: gRPC error UNAVAILABLE: failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:8600: Failed to connect to remote host: connect: Connection refused (61)
+2026-01-14 23:14:28,750 - root - INFO - Logging to file: /Users/siggysmackbookair/Cost-cutting-team/agents/openagents.log
+2026-01-14 23:14:28,753 - openagents.utils.agent_loader - INFO - Processed 1 enabled mods: ['openagents.mods.workspace.messaging']
+2026-01-14 23:14:28,754 - openagents.utils.agent_loader - INFO - Creating openagents.agents.collaborator_agent.CollaboratorAgent instance with ID '战略顾问'
+2026-01-14 23:14:28,755 - openagents.utils.mod_loaders - INFO - Successfully loaded mod adapter: openagents.mods.workspace.messaging
+2026-01-14 23:14:28,755 - openagents.utils.mod_loaders - INFO - Instantiated adapter for openagents.mods.workspace.messaging (no args)
+2026-01-14 23:14:28,756 - openagents.mods.workspace.messaging.adapter - INFO - Initializing Thread Messaging protocol for agent 战略顾问 with file storage at /var/folders/t3/mjqht8dn1d983zxjslkrf03w0000gn/T/openagents_agent_战略顾问_threads_e1mgydu8
+2026-01-14 23:14:28,757 - openagents.core.client - INFO - Registered mod adapter ThreadMessagingAgentAdapter with agent 战略顾问
+2026-01-14 23:14:28,757 - openagents.agents.runner - INFO - Updated available tools for agent 战略顾问: ['send_direct_message', 'send_channel_message', 'reply_channel_message', 'list_channels', 'retrieve_channel_messages', 'retrieve_direct_messages', 'react_to_message']
+2026-01-14 23:14:28,758 - openagents.utils.agent_loader - INFO - Successfully loaded openagents.agents.collaborator_agent.CollaboratorAgent '战略顾问' from 战略顾问.yaml
+2026-01-14 23:14:28,764 - openagents.core.client - INFO - ✅ Successfully retrieved health check from http://localhost:8700/api/health
+2026-01-14 23:14:28,765 - openagents.core.client - INFO - Detected network: DefaultNetwork (default-network-1)
+2026-01-14 23:14:28,766 - openagents.core.client - INFO - Transport: grpc, Host: localhost, Port: 8600
+2026-01-14 23:14:28,767 - openagents.core.client - INFO - Creating gRPC connector for agent 战略顾问
+2026-01-14 23:14:28,827 - openagents.core.connectors.grpc_connector - INFO - Connecting to gRPC server at localhost:8600
+2026-01-14 23:14:28,851 - openagents.core.connectors.grpc_connector - INFO - Connected to gRPC network successfully
+2026-01-14 23:14:28,852 - openagents.core.client - INFO - 🔧 Starting message polling for  agent 战略顾问
+2026-01-14 23:14:28,857 - openagents.core.client - INFO - 🔧 CLIENT: Starting message polling for agent 战略顾问
+2026-01-14 23:14:28,862 - openagents.agents.runner - INFO - Supported mod: openagents.mods.workspace.wiki (v1.0.0)
+2026-01-14 23:14:28,862 - openagents.agents.runner - INFO - Supported mod: openagents.mods.workspace.default (v1.0.0)
+2026-01-14 23:14:28,862 - openagents.agents.runner - INFO - Supported mod: openagents.mods.games.agentworld (v1.0.0)
+2026-01-14 23:14:28,863 - openagents.agents.runner - INFO - Supported mod: openagents.mods.workspace.messaging (v1.0.0)
+2026-01-14 23:14:28,863 - openagents.agents.runner - INFO - Supported mod: openagents.mods.workspace.project (v1.0.0)
+2026-01-14 23:14:28,864 - openagents.agents.runner - INFO - Supported mod: openagents.mods.workspace.forum (v1.0.0)
+2026-01-14 23:14:28,865 - openagents.utils.mod_loaders - INFO - Successfully loaded mod adapter: openagents.mods.games.agentworld
+2026-01-14 23:14:28,866 - openagents.mods.games.agentworld.adapter - INFO - AgentWorld adapter created
+2026-01-14 23:14:28,866 - openagents.utils.mod_loaders - INFO - Instantiated adapter for openagents.mods.games.agentworld (no args)
+2026-01-14 23:14:28,867 - openagents.mods.games.agentworld.adapter - INFO - AgentWorld adapter initialized for agent 战略顾问, game server: localhost:7031, username_prefix: None
+2026-01-14 23:14:28,867 - openagents.core.client - INFO - Registered mod adapter AgentWorldAdapter with agent 战略顾问
+2026-01-14 23:14:28,868 - openagents.agents.runner - INFO - Updated available tools for agent 战略顾问: ['send_direct_message', 'send_channel_message', 'reply_channel_message', 'list_channels', 'retrieve_channel_messages', 'retrieve_direct_messages', 'react_to_message', 'agentworld_login', 'agentworld_observe', 'agentworld_move', 'agentworld_chat', 'agentworld_attack', 'agentworld_harvest', 'agentworld_craft', 'agentworld_transfer_items']
+2026-01-14 23:15:58,237 - root - INFO - Logging to file: /Users/siggysmackbookair/Cost-cutting-team/agents/openagents.log
+2026-01-14 23:15:58,240 - openagents.utils.agent_loader - INFO - Processed 1 enabled mods: ['openagents.mods.workspace.messaging']
+2026-01-14 23:15:58,240 - openagents.utils.agent_loader - INFO - Creating openagents.agents.collaborator_agent.CollaboratorAgent instance with ID '外部信息搜集专员'
+2026-01-14 23:15:58,241 - openagents.utils.mod_loaders - INFO - Successfully loaded mod adapter: openagents.mods.workspace.messaging
+2026-01-14 23:15:58,241 - openagents.utils.mod_loaders - INFO - Instantiated adapter for openagents.mods.workspace.messaging (no args)
+2026-01-14 23:15:58,242 - openagents.mods.workspace.messaging.adapter - INFO - Initializing Thread Messaging protocol for agent 外部信息搜集专员 with file storage at /var/folders/t3/mjqht8dn1d983zxjslkrf03w0000gn/T/openagents_agent_外部信息搜集专员_threads_mazal_3m
+2026-01-14 23:15:58,244 - openagents.core.client - INFO - Registered mod adapter ThreadMessagingAgentAdapter with agent 外部信息搜集专员
+2026-01-14 23:15:58,244 - openagents.agents.runner - INFO - Updated available tools for agent 外部信息搜集专员: ['send_direct_message', 'send_channel_message', 'reply_channel_message', 'list_channels', 'retrieve_channel_messages', 'retrieve_direct_messages', 'react_to_message']
+2026-01-14 23:15:58,245 - openagents.utils.agent_loader - INFO - Successfully loaded openagents.agents.collaborator_agent.CollaboratorAgent '外部信息搜集专员' from 外部信息搜集专家.yaml
+2026-01-14 23:15:58,250 - openagents.core.client - INFO - ✅ Successfully retrieved health check from http://localhost:8700/api/health
+2026-01-14 23:15:58,251 - openagents.core.client - INFO - Detected network: DefaultNetwork (default-network-1)
+2026-01-14 23:15:58,251 - openagents.core.client - INFO - Transport: grpc, Host: localhost, Port: 8600
+2026-01-14 23:15:58,251 - openagents.core.client - INFO - Creating gRPC connector for agent 外部信息搜集专员
+2026-01-14 23:15:58,280 - openagents.core.connectors.grpc_connector - INFO - Connecting to gRPC server at localhost:8600
+2026-01-14 23:15:58,294 - openagents.core.connectors.grpc_connector - INFO - Connected to gRPC network successfully
+2026-01-14 23:15:58,294 - openagents.core.client - INFO - 🔧 Starting message polling for  agent 外部信息搜集专员
+2026-01-14 23:15:58,299 - openagents.core.client - INFO - 🔧 CLIENT: Starting message polling for agent 外部信息搜集专员
+2026-01-14 23:15:58,302 - openagents.agents.runner - INFO - Supported mod: openagents.mods.workspace.wiki (v1.0.0)
+2026-01-14 23:15:58,302 - openagents.agents.runner - INFO - Supported mod: openagents.mods.workspace.default (v1.0.0)
+2026-01-14 23:15:58,303 - openagents.agents.runner - INFO - Supported mod: openagents.mods.games.agentworld (v1.0.0)
+2026-01-14 23:15:58,303 - openagents.agents.runner - INFO - Supported mod: openagents.mods.workspace.messaging (v1.0.0)
+2026-01-14 23:15:58,304 - openagents.agents.runner - INFO - Supported mod: openagents.mods.workspace.project (v1.0.0)
+2026-01-14 23:15:58,304 - openagents.agents.runner - INFO - Supported mod: openagents.mods.workspace.forum (v1.0.0)
+2026-01-14 23:15:58,306 - openagents.utils.mod_loaders - INFO - Successfully loaded mod adapter: openagents.mods.games.agentworld
+2026-01-14 23:15:58,307 - openagents.mods.games.agentworld.adapter - INFO - AgentWorld adapter created
+2026-01-14 23:15:58,307 - openagents.utils.mod_loaders - INFO - Instantiated adapter for openagents.mods.games.agentworld (no args)
+2026-01-14 23:15:58,308 - openagents.mods.games.agentworld.adapter - INFO - AgentWorld adapter initialized for agent 外部信息搜集专员, game server: localhost:7031, username_prefix: None
+2026-01-14 23:15:58,308 - openagents.core.client - INFO - Registered mod adapter AgentWorldAdapter with agent 外部信息搜集专员
+2026-01-14 23:15:58,309 - openagents.agents.runner - INFO - Updated available tools for agent 外部信息搜集专员: ['send_direct_message', 'send_channel_message', 'reply_channel_message', 'list_channels', 'retrieve_channel_messages', 'retrieve_direct_messages', 'react_to_message', 'agentworld_login', 'agentworld_observe', 'agentworld_move', 'agentworld_chat', 'agentworld_attack', 'agentworld_harvest', 'agentworld_craft', 'agentworld_transfer_items']
+2026-01-14 23:17:06,275 - root - INFO - Logging to file: /Users/siggysmackbookair/Cost-cutting-team/agents/openagents.log
+2026-01-14 23:17:06,278 - openagents.utils.agent_loader - INFO - Processed 1 enabled mods: ['openagents.mods.workspace.messaging']
+2026-01-14 23:17:06,279 - openagents.utils.agent_loader - INFO - Creating openagents.agents.collaborator_agent.CollaboratorAgent instance with ID '外部信息搜集专员'
+2026-01-14 23:17:06,279 - openagents.utils.mod_loaders - INFO - Successfully loaded mod adapter: openagents.mods.workspace.messaging
+2026-01-14 23:17:06,280 - openagents.utils.mod_loaders - INFO - Instantiated adapter for openagents.mods.workspace.messaging (no args)
+2026-01-14 23:17:06,281 - openagents.mods.workspace.messaging.adapter - INFO - Initializing Thread Messaging protocol for agent 外部信息搜集专员 with file storage at /var/folders/t3/mjqht8dn1d983zxjslkrf03w0000gn/T/openagents_agent_外部信息搜集专员_threads_2a0zpcfw
+2026-01-14 23:17:06,281 - openagents.core.client - INFO - Registered mod adapter ThreadMessagingAgentAdapter with agent 外部信息搜集专员
+2026-01-14 23:17:06,282 - openagents.agents.runner - INFO - Updated available tools for agent 外部信息搜集专员: ['send_direct_message', 'send_channel_message', 'reply_channel_message', 'list_channels', 'retrieve_channel_messages', 'retrieve_direct_messages', 'react_to_message']
+2026-01-14 23:17:06,282 - openagents.utils.agent_loader - INFO - Successfully loaded openagents.agents.collaborator_agent.CollaboratorAgent '外部信息搜集专员' from 外部信息搜集专家.yaml
+2026-01-14 23:17:06,288 - openagents.core.client - INFO - ✅ Successfully retrieved health check from http://localhost:8700/api/health
+2026-01-14 23:17:06,289 - openagents.core.client - INFO - Detected network: DefaultNetwork (default-network-1)
+2026-01-14 23:17:06,289 - openagents.core.client - INFO - Transport: grpc, Host: localhost, Port: 8600
+2026-01-14 23:17:06,290 - openagents.core.client - INFO - Creating gRPC connector for agent 外部信息搜集专员
+2026-01-14 23:17:06,339 - openagents.core.connectors.grpc_connector - INFO - Connecting to gRPC server at localhost:8600
+2026-01-14 23:17:06,350 - openagents.core.connectors.grpc_connector - ERROR - Agent registration failed: Agent 外部信息搜集专员 already registered with network
+2026-01-14 23:17:06,350 - openagents.utils.mcp_connector - INFO - Cleaning up MCP clients
+2026-01-14 23:17:06,353 - openagents.core.connectors.grpc_connector - INFO - Agent 外部信息搜集专员 disconnected from gRPC network
+2026-01-14 23:17:06,353 - openagents.utils.mcp_connector - INFO - Cleaning up MCP clients
+2026-01-14 23:17:06,354 - openagents.core.connectors.grpc_connector - INFO - Agent 外部信息搜集专员 disconnected from gRPC network
+2026-01-14 23:18:50,936 - root - INFO - Logging to file: /Users/siggysmackbookair/Cost-cutting-team/agents/openagents.log
+2026-01-14 23:18:50,939 - openagents.utils.agent_loader - INFO - Processed 1 enabled mods: ['openagents.mods.workspace.messaging']
+2026-01-14 23:18:50,940 - openagents.utils.agent_loader - INFO - Creating openagents.agents.collaborator_agent.CollaboratorAgent instance with ID '供应链负责人'
+2026-01-14 23:18:50,940 - openagents.utils.mod_loaders - INFO - Successfully loaded mod adapter: openagents.mods.workspace.messaging
+2026-01-14 23:18:50,941 - openagents.utils.mod_loaders - INFO - Instantiated adapter for openagents.mods.workspace.messaging (no args)
+2026-01-14 23:18:50,942 - openagents.mods.workspace.messaging.adapter - INFO - Initializing Thread Messaging protocol for agent 供应链负责人 with file storage at /var/folders/t3/mjqht8dn1d983zxjslkrf03w0000gn/T/openagents_agent_供应链负责人_threads_pnuxbic2
+2026-01-14 23:18:50,942 - openagents.core.client - INFO - Registered mod adapter ThreadMessagingAgentAdapter with agent 供应链负责人
+2026-01-14 23:18:50,943 - openagents.agents.runner - INFO - Updated available tools for agent 供应链负责人: ['send_direct_message', 'send_channel_message', 'reply_channel_message', 'list_channels', 'retrieve_channel_messages', 'retrieve_direct_messages', 'react_to_message']
+2026-01-14 23:18:50,943 - openagents.utils.agent_loader - INFO - Successfully loaded openagents.agents.collaborator_agent.CollaboratorAgent '供应链负责人' from 供应链专家.yaml
+2026-01-14 23:18:50,949 - openagents.core.client - INFO - ✅ Successfully retrieved health check from http://localhost:8700/api/health
+2026-01-14 23:18:50,951 - openagents.core.client - INFO - Detected network: DefaultNetwork (default-network-1)
+2026-01-14 23:18:50,952 - openagents.core.client - INFO - Transport: grpc, Host: localhost, Port: 8600
+2026-01-14 23:18:50,952 - openagents.core.client - INFO - Creating gRPC connector for agent 供应链负责人
+2026-01-14 23:18:50,982 - openagents.core.connectors.grpc_connector - INFO - Connecting to gRPC server at localhost:8600
+2026-01-14 23:18:50,994 - openagents.core.connectors.grpc_connector - INFO - Connected to gRPC network successfully
+2026-01-14 23:18:50,994 - openagents.core.client - INFO - 🔧 Starting message polling for  agent 供应链负责人
+2026-01-14 23:18:50,999 - openagents.core.client - INFO - 🔧 CLIENT: Starting message polling for agent 供应链负责人
+2026-01-14 23:18:51,002 - openagents.agents.runner - INFO - Supported mod: openagents.mods.workspace.wiki (v1.0.0)
+2026-01-14 23:18:51,003 - openagents.agents.runner - INFO - Supported mod: openagents.mods.workspace.default (v1.0.0)
+2026-01-14 23:18:51,003 - openagents.agents.runner - INFO - Supported mod: openagents.mods.games.agentworld (v1.0.0)
+2026-01-14 23:18:51,003 - openagents.agents.runner - INFO - Supported mod: openagents.mods.workspace.messaging (v1.0.0)
+2026-01-14 23:18:51,004 - openagents.agents.runner - INFO - Supported mod: openagents.mods.workspace.project (v1.0.0)
+2026-01-14 23:18:51,004 - openagents.agents.runner - INFO - Supported mod: openagents.mods.workspace.forum (v1.0.0)
+2026-01-14 23:18:51,006 - openagents.utils.mod_loaders - INFO - Successfully loaded mod adapter: openagents.mods.games.agentworld
+2026-01-14 23:18:51,007 - openagents.mods.games.agentworld.adapter - INFO - AgentWorld adapter created
+2026-01-14 23:18:51,007 - openagents.utils.mod_loaders - INFO - Instantiated adapter for openagents.mods.games.agentworld (no args)
+2026-01-14 23:18:51,008 - openagents.mods.games.agentworld.adapter - INFO - AgentWorld adapter initialized for agent 供应链负责人, game server: localhost:7031, username_prefix: None
+2026-01-14 23:18:51,008 - openagents.core.client - INFO - Registered mod adapter AgentWorldAdapter with agent 供应链负责人
+2026-01-14 23:18:51,010 - openagents.agents.runner - INFO - Updated available tools for agent 供应链负责人: ['send_direct_message', 'send_channel_message', 'reply_channel_message', 'list_channels', 'retrieve_channel_messages', 'retrieve_direct_messages', 'react_to_message', 'agentworld_login', 'agentworld_observe', 'agentworld_move', 'agentworld_chat', 'agentworld_attack', 'agentworld_harvest', 'agentworld_craft', 'agentworld_transfer_items']
+2026-01-14 23:19:44,538 - root - INFO - Logging to file: /Users/siggysmackbookair/Cost-cutting-team/agents/openagents.log
+2026-01-14 23:19:44,541 - openagents.utils.agent_loader - INFO - Processed 1 enabled mods: ['openagents.mods.workspace.messaging']
+2026-01-14 23:19:44,542 - openagents.utils.agent_loader - INFO - Creating openagents.agents.collaborator_agent.CollaboratorAgent instance with ID '生产部的leader'
+2026-01-14 23:19:44,542 - openagents.utils.mod_loaders - INFO - Successfully loaded mod adapter: openagents.mods.workspace.messaging
+2026-01-14 23:19:44,543 - openagents.utils.mod_loaders - INFO - Instantiated adapter for openagents.mods.workspace.messaging (no args)
+2026-01-14 23:19:44,544 - openagents.mods.workspace.messaging.adapter - INFO - Initializing Thread Messaging protocol for agent 生产部的leader with file storage at /var/folders/t3/mjqht8dn1d983zxjslkrf03w0000gn/T/openagents_agent_生产部的leader_threads_nl7gl9cw
+2026-01-14 23:19:44,545 - openagents.core.client - INFO - Registered mod adapter ThreadMessagingAgentAdapter with agent 生产部的leader
+2026-01-14 23:19:44,545 - openagents.agents.runner - INFO - Updated available tools for agent 生产部的leader: ['send_direct_message', 'send_channel_message', 'reply_channel_message', 'list_channels', 'retrieve_channel_messages', 'retrieve_direct_messages', 'react_to_message']
+2026-01-14 23:19:44,546 - openagents.utils.agent_loader - INFO - Successfully loaded openagents.agents.collaborator_agent.CollaboratorAgent '生产部的leader' from 生产流程专家.yaml
+2026-01-14 23:19:44,585 - openagents.core.client - INFO - ✅ Successfully retrieved health check from http://localhost:8700/api/health
+2026-01-14 23:19:44,587 - openagents.core.client - INFO - Detected network: DefaultNetwork (default-network-1)
+2026-01-14 23:19:44,588 - openagents.core.client - INFO - Transport: grpc, Host: localhost, Port: 8600
+2026-01-14 23:19:44,588 - openagents.core.client - INFO - Creating gRPC connector for agent 生产部的leader
+2026-01-14 23:19:44,621 - openagents.core.connectors.grpc_connector - INFO - Connecting to gRPC server at localhost:8600
+2026-01-14 23:19:44,632 - openagents.core.connectors.grpc_connector - INFO - Connected to gRPC network successfully
+2026-01-14 23:19:44,633 - openagents.core.client - INFO - 🔧 Starting message polling for  agent 生产部的leader
+2026-01-14 23:19:44,638 - openagents.core.client - INFO - 🔧 CLIENT: Starting message polling for agent 生产部的leader
+2026-01-14 23:19:44,642 - openagents.agents.runner - INFO - Supported mod: openagents.mods.workspace.wiki (v1.0.0)
+2026-01-14 23:19:44,642 - openagents.agents.runner - INFO - Supported mod: openagents.mods.workspace.default (v1.0.0)
+2026-01-14 23:19:44,643 - openagents.agents.runner - INFO - Supported mod: openagents.mods.games.agentworld (v1.0.0)
+2026-01-14 23:19:44,643 - openagents.agents.runner - INFO - Supported mod: openagents.mods.workspace.messaging (v1.0.0)
+2026-01-14 23:19:44,644 - openagents.agents.runner - INFO - Supported mod: openagents.mods.workspace.project (v1.0.0)
+2026-01-14 23:19:44,644 - openagents.agents.runner - INFO - Supported mod: openagents.mods.workspace.forum (v1.0.0)
+2026-01-14 23:19:44,646 - openagents.utils.mod_loaders - INFO - Successfully loaded mod adapter: openagents.mods.games.agentworld
+2026-01-14 23:19:44,646 - openagents.mods.games.agentworld.adapter - INFO - AgentWorld adapter created
+2026-01-14 23:19:44,647 - openagents.utils.mod_loaders - INFO - Instantiated adapter for openagents.mods.games.agentworld (no args)
+2026-01-14 23:19:44,647 - openagents.mods.games.agentworld.adapter - INFO - AgentWorld adapter initialized for agent 生产部的leader, game server: localhost:7031, username_prefix: None
+2026-01-14 23:19:44,648 - openagents.core.client - INFO - Registered mod adapter AgentWorldAdapter with agent 生产部的leader
+2026-01-14 23:19:44,648 - openagents.agents.runner - INFO - Updated available tools for agent 生产部的leader: ['send_direct_message', 'send_channel_message', 'reply_channel_message', 'list_channels', 'retrieve_channel_messages', 'retrieve_direct_messages', 'react_to_message', 'agentworld_login', 'agentworld_observe', 'agentworld_move', 'agentworld_chat', 'agentworld_attack', 'agentworld_harvest', 'agentworld_craft', 'agentworld_transfer_items']
+2026-01-14 23:21:06,810 - root - INFO - Logging to file: /Users/siggysmackbookair/Cost-cutting-team/agents/openagents.log
+2026-01-14 23:21:06,813 - openagents.utils.agent_loader - INFO - Processed 1 enabled mods: ['openagents.mods.workspace.messaging']
+2026-01-14 23:21:06,814 - openagents.utils.agent_loader - INFO - Creating openagents.agents.collaborator_agent.CollaboratorAgent instance with ID '质量管理专家'
+2026-01-14 23:21:06,815 - openagents.utils.mod_loaders - INFO - Successfully loaded mod adapter: openagents.mods.workspace.messaging
+2026-01-14 23:21:06,815 - openagents.utils.mod_loaders - INFO - Instantiated adapter for openagents.mods.workspace.messaging (no args)
+2026-01-14 23:21:06,816 - openagents.mods.workspace.messaging.adapter - INFO - Initializing Thread Messaging protocol for agent 质量管理专家 with file storage at /var/folders/t3/mjqht8dn1d983zxjslkrf03w0000gn/T/openagents_agent_质量管理专家_threads_ipleqly6
+2026-01-14 23:21:06,817 - openagents.core.client - INFO - Registered mod adapter ThreadMessagingAgentAdapter with agent 质量管理专家
+2026-01-14 23:21:06,818 - openagents.agents.runner - INFO - Updated available tools for agent 质量管理专家: ['send_direct_message', 'send_channel_message', 'reply_channel_message', 'list_channels', 'retrieve_channel_messages', 'retrieve_direct_messages', 'react_to_message']
+2026-01-14 23:21:06,818 - openagents.utils.agent_loader - INFO - Successfully loaded openagents.agents.collaborator_agent.CollaboratorAgent '质量管理专家' from 质量管理专家.yaml
+2026-01-14 23:21:06,827 - openagents.core.client - INFO - ✅ Successfully retrieved health check from http://localhost:8700/api/health
+2026-01-14 23:21:06,828 - openagents.core.client - INFO - Detected network: DefaultNetwork (default-network-1)
+2026-01-14 23:21:06,828 - openagents.core.client - INFO - Transport: grpc, Host: localhost, Port: 8600
+2026-01-14 23:21:06,829 - openagents.core.client - INFO - Creating gRPC connector for agent 质量管理专家
+2026-01-14 23:21:06,859 - openagents.core.connectors.grpc_connector - INFO - Connecting to gRPC server at localhost:8600
+2026-01-14 23:21:06,874 - openagents.core.connectors.grpc_connector - INFO - Connected to gRPC network successfully
+2026-01-14 23:21:06,875 - openagents.core.client - INFO - 🔧 Starting message polling for  agent 质量管理专家
+2026-01-14 23:21:06,880 - openagents.core.client - INFO - 🔧 CLIENT: Starting message polling for agent 质量管理专家
+2026-01-14 23:21:06,883 - openagents.agents.runner - INFO - Supported mod: openagents.mods.workspace.wiki (v1.0.0)
+2026-01-14 23:21:06,884 - openagents.agents.runner - INFO - Supported mod: openagents.mods.workspace.default (v1.0.0)
+2026-01-14 23:21:06,884 - openagents.agents.runner - INFO - Supported mod: openagents.mods.games.agentworld (v1.0.0)
+2026-01-14 23:21:06,885 - openagents.agents.runner - INFO - Supported mod: openagents.mods.workspace.messaging (v1.0.0)
+2026-01-14 23:21:06,885 - openagents.agents.runner - INFO - Supported mod: openagents.mods.workspace.project (v1.0.0)
+2026-01-14 23:21:06,885 - openagents.agents.runner - INFO - Supported mod: openagents.mods.workspace.forum (v1.0.0)
+2026-01-14 23:21:06,887 - openagents.utils.mod_loaders - INFO - Successfully loaded mod adapter: openagents.mods.games.agentworld
+2026-01-14 23:21:06,888 - openagents.mods.games.agentworld.adapter - INFO - AgentWorld adapter created
+2026-01-14 23:21:06,889 - openagents.utils.mod_loaders - INFO - Instantiated adapter for openagents.mods.games.agentworld (no args)
+2026-01-14 23:21:06,889 - openagents.mods.games.agentworld.adapter - INFO - AgentWorld adapter initialized for agent 质量管理专家, game server: localhost:7031, username_prefix: None
+2026-01-14 23:21:06,889 - openagents.core.client - INFO - Registered mod adapter AgentWorldAdapter with agent 质量管理专家
+2026-01-14 23:21:06,890 - openagents.agents.runner - INFO - Updated available tools for agent 质量管理专家: ['send_direct_message', 'send_channel_message', 'reply_channel_message', 'list_channels', 'retrieve_channel_messages', 'retrieve_direct_messages', 'react_to_message', 'agentworld_login', 'agentworld_observe', 'agentworld_move', 'agentworld_chat', 'agentworld_attack', 'agentworld_harvest', 'agentworld_craft', 'agentworld_transfer_items']
+2026-01-14 23:23:00,054 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: admin | Target: 外部信息搜集专员
+2026-01-14 23:23:00,055 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: admin | Target: 战略顾问
+2026-01-14 23:23:00,056 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: admin | Target: 供应链负责人
+2026-01-14 23:23:00,500 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: admin | Target: 生产部的leader
+2026-01-14 23:23:00,501 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: admin | Target: 质量管理专家
+2026-01-14 23:23:13,756 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-14 23:23:13,806 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 外部信息搜集专员 | Target: 战略顾问
+2026-01-14 23:23:14,116 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 外部信息搜集专员 | Target: 供应链负责人
+2026-01-14 23:23:14,369 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-01-14 23:23:14,372 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 400 - {'detail': 'Backend API error: Error at "/messages/3/tool_call_id": property "tool_call_id" is missing\nSchema:\n  {\n    "properties": {\n      "content": {\n        "description": "The contents of the tool message.",\n        "title": "Text content",\n        "type": "string"\n      },\n      "role": {\n        "description": "The role of the messages author, in this case `tool`.",\n        "enum": [\n          "tool"\n        ],\n        "type": "string",\n        "x-stainless-const": true\n      },\n      "tool_call_id": {\n        "description": "Tool call that this message is responding to.",\n        "type": "string"\n      }\n    },\n    "required": [\n      "role",\n      "content",\n      "tool_call_id"\n    ],\n    "title": "Tool message",\n    "type": "object"\n  }\n\nValue:\n  {\n    "content": "None",\n    "role": "tool"\n  }\n\n'}
+2026-01-14 23:23:14,592 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 外部信息搜集专员 | Target: 质量管理专家
+2026-01-14 23:23:14,592 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 外部信息搜集专员 | Target: 生产部的leader
+2026-01-14 23:23:18,408 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-14 23:23:18,616 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 生产部的leader | Target: 质量管理专家
+2026-01-14 23:23:18,827 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 生产部的leader | Target: 战略顾问
+2026-01-14 23:23:19,041 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-01-14 23:23:19,045 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 400 - {'detail': 'Backend API error: Error at "/messages/3/tool_call_id": property "tool_call_id" is missing\nSchema:\n  {\n    "properties": {\n      "content": {\n        "description": "The contents of the tool message.",\n        "title": "Text content",\n        "type": "string"\n      },\n      "role": {\n        "description": "The role of the messages author, in this case `tool`.",\n        "enum": [\n          "tool"\n        ],\n        "type": "string",\n        "x-stainless-const": true\n      },\n      "tool_call_id": {\n        "description": "Tool call that this message is responding to.",\n        "type": "string"\n      }\n    },\n    "required": [\n      "role",\n      "content",\n      "tool_call_id"\n    ],\n    "title": "Tool message",\n    "type": "object"\n  }\n\nValue:\n  {\n    "content": "None",\n    "role": "tool"\n  }\n\n'}
+2026-01-14 23:23:19,140 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 生产部的leader | Target: 供应链负责人
+2026-01-14 23:23:19,175 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 生产部的leader | Target: 外部信息搜集专员
+2026-01-14 23:23:19,262 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-14 23:23:19,619 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 战略顾问 | Target: 生产部的leader
+2026-01-14 23:23:19,625 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 战略顾问 | Target: 质量管理专家
+2026-01-14 23:23:19,820 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-01-14 23:23:19,844 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 400 - {'detail': 'Backend API error: Error at "/messages/3/tool_call_id": property "tool_call_id" is missing\nSchema:\n  {\n    "properties": {\n      "content": {\n        "description": "The contents of the tool message.",\n        "title": "Text content",\n        "type": "string"\n      },\n      "role": {\n        "description": "The role of the messages author, in this case `tool`.",\n        "enum": [\n          "tool"\n        ],\n        "type": "string",\n        "x-stainless-const": true\n      },\n      "tool_call_id": {\n        "description": "Tool call that this message is responding to.",\n        "type": "string"\n      }\n    },\n    "required": [\n      "role",\n      "content",\n      "tool_call_id"\n    ],\n    "title": "Tool message",\n    "type": "object"\n  }\n\nValue:\n  {\n    "content": "None",\n    "role": "tool"\n  }\n\n'}
+2026-01-14 23:23:20,088 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-14 23:23:20,179 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 战略顾问 | Target: 供应链负责人
+2026-01-14 23:23:20,182 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 战略顾问 | Target: 外部信息搜集专员
+2026-01-14 23:23:20,186 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 供应链负责人 | Target: 外部信息搜集专员
+2026-01-14 23:23:20,631 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 供应链负责人 | Target: 生产部的leader
+2026-01-14 23:23:20,636 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 供应链负责人 | Target: 质量管理专家
+2026-01-14 23:23:20,821 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-01-14 23:23:20,822 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-14 23:23:20,823 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 400 - {'detail': 'Backend API error: Error at "/messages/3/tool_call_id": property "tool_call_id" is missing\nSchema:\n  {\n    "properties": {\n      "content": {\n        "description": "The contents of the tool message.",\n        "title": "Text content",\n        "type": "string"\n      },\n      "role": {\n        "description": "The role of the messages author, in this case `tool`.",\n        "enum": [\n          "tool"\n        ],\n        "type": "string",\n        "x-stainless-const": true\n      },\n      "tool_call_id": {\n        "description": "Tool call that this message is responding to.",\n        "type": "string"\n      }\n    },\n    "required": [\n      "role",\n      "content",\n      "tool_call_id"\n    ],\n    "title": "Tool message",\n    "type": "object"\n  }\n\nValue:\n  {\n    "content": "None",\n    "role": "tool"\n  }\n\n'}
+2026-01-14 23:23:20,906 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 供应链负责人 | Target: 战略顾问
+2026-01-14 23:23:20,910 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 质量管理专家 | Target: 战略顾问
+2026-01-14 23:23:21,186 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 质量管理专家 | Target: 供应链负责人
+2026-01-14 23:23:21,193 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 质量管理专家 | Target: 外部信息搜集专员
+2026-01-14 23:23:21,384 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-01-14 23:23:21,387 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 400 - {'detail': 'Backend API error: Error at "/messages/3/tool_call_id": property "tool_call_id" is missing\nSchema:\n  {\n    "properties": {\n      "content": {\n        "description": "The contents of the tool message.",\n        "title": "Text content",\n        "type": "string"\n      },\n      "role": {\n        "description": "The role of the messages author, in this case `tool`.",\n        "enum": [\n          "tool"\n        ],\n        "type": "string",\n        "x-stainless-const": true\n      },\n      "tool_call_id": {\n        "description": "Tool call that this message is responding to.",\n        "type": "string"\n      }\n    },\n    "required": [\n      "role",\n      "content",\n      "tool_call_id"\n    ],\n    "title": "Tool message",\n    "type": "object"\n  }\n\nValue:\n  {\n    "content": "None",\n    "role": "tool"\n  }\n\n'}
+2026-01-14 23:23:21,641 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 质量管理专家 | Target: 生产部的leader
+2026-01-14 23:23:29,395 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-14 23:23:29,669 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 外部信息搜集专员 | Target: 质量管理专家
+2026-01-14 23:23:29,670 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 外部信息搜集专员 | Target: 生产部的leader
+2026-01-14 23:23:29,854 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-14 23:23:29,942 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 外部信息搜集专员 | Target: 战略顾问
+2026-01-14 23:23:29,947 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 生产部的leader | Target: 战略顾问
+2026-01-14 23:23:29,998 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-01-14 23:23:29,999 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 400 - {'detail': 'Backend API error: Error at "/messages/3/tool_call_id": property "tool_call_id" is missing\nSchema:\n  {\n    "properties": {\n      "content": {\n        "description": "The contents of the tool message.",\n        "title": "Text content",\n        "type": "string"\n      },\n      "role": {\n        "description": "The role of the messages author, in this case `tool`.",\n        "enum": [\n          "tool"\n        ],\n        "type": "string",\n        "x-stainless-const": true\n      },\n      "tool_call_id": {\n        "description": "Tool call that this message is responding to.",\n        "type": "string"\n      }\n    },\n    "required": [\n      "role",\n      "content",\n      "tool_call_id"\n    ],\n    "title": "Tool message",\n    "type": "object"\n  }\n\nValue:\n  {\n    "content": "None",\n    "role": "tool"\n  }\n\n'}
+2026-01-14 23:23:30,218 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 外部信息搜集专员 | Target: 供应链负责人
+2026-01-14 23:23:30,220 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 生产部的leader | Target: 外部信息搜集专员
+2026-01-14 23:23:30,224 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 生产部的leader | Target: 供应链负责人
+2026-01-14 23:23:30,405 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-01-14 23:23:30,407 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 400 - {'detail': 'Backend API error: Error at "/messages/3/tool_call_id": property "tool_call_id" is missing\nSchema:\n  {\n    "properties": {\n      "content": {\n        "description": "The contents of the tool message.",\n        "title": "Text content",\n        "type": "string"\n      },\n      "role": {\n        "description": "The role of the messages author, in this case `tool`.",\n        "enum": [\n          "tool"\n        ],\n        "type": "string",\n        "x-stainless-const": true\n      },\n      "tool_call_id": {\n        "description": "Tool call that this message is responding to.",\n        "type": "string"\n      }\n    },\n    "required": [\n      "role",\n      "content",\n      "tool_call_id"\n    ],\n    "title": "Tool message",\n    "type": "object"\n  }\n\nValue:\n  {\n    "content": "None",\n    "role": "tool"\n  }\n\n'}
+2026-01-14 23:23:30,680 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 生产部的leader | Target: 质量管理专家
+2026-01-14 23:23:34,896 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-14 23:23:35,257 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 战略顾问 | Target: 供应链负责人
+2026-01-14 23:23:35,258 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 战略顾问 | Target: 外部信息搜集专员
+2026-01-14 23:23:35,539 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2026-01-14 23:23:35,541 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 400 - {'detail': 'Backend API error: Error at "/messages/3/tool_call_id": property "tool_call_id" is missing\nSchema:\n  {\n    "properties": {\n      "content": {\n        "description": "The contents of the tool message.",\n        "title": "Text content",\n        "type": "string"\n      },\n      "role": {\n        "description": "The role of the messages author, in this case `tool`.",\n        "enum": [\n          "tool"\n        ],\n        "type": "string",\n        "x-stainless-const": true\n      },\n      "tool_call_id": {\n        "description": "Tool call that this message is responding to.",\n        "type": "string"\n      }\n    },\n    "required": [\n      "role",\n      "content",\n      "tool_call_id"\n    ],\n    "title": "Tool message",\n    "type": "object"\n  }\n\nValue:\n  {\n    "content": "None",\n    "role": "tool"\n  }\n\n'}
+2026-01-14 23:23:35,693 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 战略顾问 | Target: 生产部的leader
+2026-01-14 23:23:35,696 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 战略顾问 | Target: 质量管理专家
+2026-01-14 23:23:40,177 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-14 23:23:40,178 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-14 23:23:40,281 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 供应链负责人 | Target: 外部信息搜集专员
+2026-01-14 23:23:40,284 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 外部信息搜集专员 | Target: 供应链负责人
+2026-01-14 23:23:40,582 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:40,585 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:40,657 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:40,660 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:40,712 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 外部信息搜集专员 | Target: 质量管理专家
+2026-01-14 23:23:40,712 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 外部信息搜集专员 | Target: 生产部的leader
+2026-01-14 23:23:40,717 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 供应链负责人 | Target: 质量管理专家
+2026-01-14 23:23:40,718 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 供应链负责人 | Target: 生产部的leader
+2026-01-14 23:23:41,004 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 外部信息搜集专员 | Target: 战略顾问
+2026-01-14 23:23:41,010 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 供应链负责人 | Target: 战略顾问
+2026-01-14 23:23:41,643 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:41,643 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:41,645 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:41,645 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:42,593 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:42,594 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:43,117 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:43,119 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:43,445 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:43,448 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:43,855 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:43,856 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:44,116 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:44,119 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:44,606 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:44,608 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:45,387 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:45,387 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:45,389 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:45,389 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:45,868 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-14 23:23:46,029 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 质量管理专家 | Target: 战略顾问
+2026-01-14 23:23:46,278 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:46,280 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:46,300 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 质量管理专家 | Target: 外部信息搜集专员
+2026-01-14 23:23:46,341 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 质量管理专家 | Target: 供应链负责人
+2026-01-14 23:23:46,737 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 质量管理专家 | Target: 生产部的leader
+2026-01-14 23:23:47,239 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:47,241 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:47,956 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:47,958 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:48,517 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:48,519 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:49,239 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:49,242 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:49,981 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-14 23:23:50,043 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 生产部的leader | Target: 战略顾问
+2026-01-14 23:23:50,095 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:50,096 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:50,312 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 生产部的leader | Target: 外部信息搜集专员
+2026-01-14 23:23:50,355 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 生产部的leader | Target: 供应链负责人
+2026-01-14 23:23:50,526 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:50,527 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:50,746 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 生产部的leader | Target: 质量管理专家
+2026-01-14 23:23:50,934 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:50,936 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:51,340 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:51,341 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:51,443 - openai._base_client - INFO - Retrying request to /chat/completions in 0.419295 seconds
+2026-01-14 23:23:51,770 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:51,773 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:51,789 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:51,791 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:52,294 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:52,295 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:52,521 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:52,522 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:52,723 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:52,724 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:52,750 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-14 23:23:52,786 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 战略顾问 | Target: 质量管理专家
+2026-01-14 23:23:53,109 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:53,110 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:53,204 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:53,205 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:53,323 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 战略顾问 | Target: 外部信息搜集专员
+2026-01-14 23:23:53,366 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 战略顾问 | Target: 供应链负责人
+2026-01-14 23:23:53,381 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:53,383 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:53,737 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:53,739 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:53,757 - openagents.core.client - INFO - 📥 RECEIVED EVENT: thread.channel_message.notification | Source: 战略顾问 | Target: 生产部的leader
+2026-01-14 23:23:54,030 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:54,031 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:54,060 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:54,063 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:54,518 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:54,519 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:54,532 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:54,533 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:54,821 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:54,823 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:54,847 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:54,848 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:55,004 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:55,006 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:55,603 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:55,604 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:55,843 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:55,848 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:55,879 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:55,888 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:56,405 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:56,406 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:56,576 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:56,577 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:56,835 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:56,836 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:57,367 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:57,368 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:57,527 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:57,528 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:58,202 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:58,203 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:58,392 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:58,393 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:59,222 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:59,223 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
+2026-01-14 23:23:59,992 - httpx - INFO - HTTP Request: POST https://model-gateway.openagents.org/v1/chat/completions "HTTP/1.1 403 Forbidden"
+2026-01-14 23:23:59,993 - openagents.agents.orchestrator - ERROR - Error during model interaction: Error code: 403 - {'detail': 'API key has been deactivated. Output token limit exceeded.'}
